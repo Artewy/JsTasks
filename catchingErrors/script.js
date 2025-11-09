@@ -38,3 +38,4 @@ function transferWaitors(data) {
 }
 
 console.log(transferWaitors(restorantData1.waitors));
+
