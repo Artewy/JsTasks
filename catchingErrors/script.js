@@ -1,4 +1,4 @@
-const restorantData1 = {
+const restaurantData = {
     menu: [
         { name: 'Salad Caesar', price: '14$' },
         { name: 'Pizza Diavola', price: '9$' },
@@ -9,14 +9,12 @@ const restorantData1 = {
         { name: 'Alice', age: 22 }, { name: 'John', age: 24 }
     ],
     averageLunchPrice: '20$',
-    openNow: false
+    openNow: true
 };
 
-function getRestaurantStatus(isOpen) {
-    return isOpen ? 'Открыто' : 'Закрыто';
-}
+const getRestaurantStatus = (isOpen) => isOpen ? 'Открыто' : 'Закрыто';
 
-console.log(getRestaurantStatus(restorantData1.openNow))
+console.log(getRestaurantStatus(restaurantData.openNow))
 
 function isAverageLunchPriceTrue(firstDish, secondDish, averagePrice) {
     const firstPrice = Number(firstDish.price.slice(0, -1));
@@ -28,7 +26,7 @@ function isAverageLunchPriceTrue(firstDish, secondDish, averagePrice) {
     return total < average ? 'Цена ниже средней' : 'Цена выше средней';
 }
 
-console.log(isAverageLunchPriceTrue(restorantData1.menu[2], restorantData1.menu[2], restorantData1.averageLunchPrice));
+console.log(isAverageLunchPriceTrue(restaurantData.menu[2], restaurantData.menu[2], restaurantData.averageLunchPrice));
 
 function transferWaitors(data) {
     const copy = {
@@ -37,5 +35,4 @@ function transferWaitors(data) {
     return copy;
 }
 
-console.log(transferWaitors(restorantData1.waitors));
-
+console.log(transferWaitors(restaurantData.waitors));
